@@ -41,3 +41,16 @@ function str2ab(str) {
     }
     return buf;
 }
+// clean when the document is loaded
+document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('messageToDecrypt').value = '';
+    document.getElementById('privateKey').value = '';
+    document.getElementById('decryptedMessage').value = '';
+});
+
+// clear the keys when the page is clicked
+// Function to clear the keys
+function clearDecryptedMessage() {
+    document.getElementById('messageToEncrypt').value = '';
+    document.getElementById('encryptedMessage').value = '';
+}

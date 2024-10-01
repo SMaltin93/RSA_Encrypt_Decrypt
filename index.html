@@ -15,6 +15,8 @@
         <button onclick="generateKeys()">Generate Keys</button><br>
         <textarea id="publicKeyGenerated" rows="4" cols="50" placeholder="Generated public key will appear here" readonly></textarea><br>
         <textarea id="privateKeyGenerated" rows="4" cols="50" placeholder="Generated private key will appear here" readonly></textarea><br>
+        <button onclick="copyToClipboard('publicKeyGenerated')">Copy Public Key</button>
+        <button onclick="copyToClipboard('privateKeyGenerated')">Copy Private Key</button>
         <button onclick="clearKeys()">Clear Keys</button>
     </div>
 
@@ -26,6 +28,7 @@
         <textarea id="publicKey" rows="4" cols="50" placeholder="Enter the public key"></textarea><br>
         <button onclick="encryptMessage()">Encrypt</button><br>
         <textarea id="encryptedMessage" rows="4" cols="50" placeholder="Encrypted message will appear here"></textarea>
+        <button onclick="copyToClipboard('encryptedMessage')">Copy</button>
     </div>
 
     <hr>
@@ -36,6 +39,7 @@
         <textarea id="privateKey" rows="4" cols="50" placeholder="Enter the private key"></textarea><br>
         <button onclick="decryptMessage()">Decrypt</button><br>
         <textarea id="decryptedMessage" rows="4" cols="50" placeholder="Decrypted message will appear here"></textarea>
+        <button onclick="clearDecryptedMessage()">Clear</button>
     </div>
 
 </body>
