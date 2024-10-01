@@ -72,3 +72,23 @@ function str2ab(str) {
 function ab2str(buf) {
     return String.fromCharCode.apply(null, new Uint8Array(buf));
 }
+
+// clear the keys when the page is loaded
+document.addEventListener('DOMContentLoaded', () => {
+    publicKeyBase64 = '';
+    privateKeyBase64 = '';
+    document.getElementById('publicKeyGenerated').value = '';
+    document.getElementById('privateKeyGenerated').value = '';
+    document.getElementById('publicKey').value = '';
+    document.getElementById('messageToEncrypt').value = '';
+    document.getElementById('encryptedMessage').value = '';
+});
+
+// clear the keys when the page is clicked
+// Function to clear the keys
+function clearKeys() {
+    publicKeyBase64 = '';
+    privateKeyBase64 = '';
+    document.getElementById('publicKeyGenerated').value = '';
+    document.getElementById('privateKeyGenerated').value = '';
+}
