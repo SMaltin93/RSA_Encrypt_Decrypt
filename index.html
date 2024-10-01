@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RSA Encryption/Decryption</title>
+    <script src="encrypt.js" defer></script>
+    <script src="decrypt.js" defer></script>
+</head>
+<body>
+    <h1>RSA Encryption/Decryption</h1>
+
+    <div>
+        <h2>Encrypt Message</h2>
+        <textarea id="messageToEncrypt" rows="4" cols="50" placeholder="Enter the message to encrypt"></textarea><br>
+        <textarea id="publicKey" rows="4" cols="50" placeholder="Enter the public key"></textarea><br>
+        <button onclick="encryptMessage()">Encrypt</button><br>
+        <textarea id="encryptedMessage" rows="4" cols="50" placeholder="Encrypted message will appear here"></textarea>
+    </div>
+
+    <hr>
+
+    <div>
+        <h2>Decrypt Message</h2>
+        <textarea id="messageToDecrypt" rows="4" cols="50" placeholder="Enter the encrypted message"></textarea><br>
+        <textarea id="privateKey" rows="4" cols="50" placeholder="Enter the private key"></textarea><br>
+        <button onclick="decryptMessage()">Decrypt</button><br>
+        <textarea id="decryptedMessage" rows="4" cols="50" placeholder="Decrypted message will appear here"></textarea>
+    </div>
+
+</body>
+</html>
