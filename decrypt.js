@@ -18,6 +18,7 @@ async function decryptMessage() {
         true,
         ["decrypt"]
     );
+    
 
     // Decrypt the message
     try {
@@ -28,8 +29,9 @@ async function decryptMessage() {
         );
         document.getElementById('decryptedMessage').value = new TextDecoder().decode(decrypted);
     } catch (err) {
-        alert("Decryption failed. Please check your private key and encrypted message.");
+        alert("Please enter both an encrypted message and a private key.");
     }
+
 }
 
 // Utility functions to convert between strings and ArrayBuffers
