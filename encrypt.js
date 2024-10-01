@@ -1,3 +1,6 @@
+let publicKeyBase64 = '';
+let privateKeyBase64 = '';
+
 async function generateKeys() {
     // Generate a new RSA key pair
     const keyPair = await crypto.subtle.generateKey(
@@ -16,8 +19,8 @@ async function generateKeys() {
     const privateKey = await crypto.subtle.exportKey("pkcs8", keyPair.privateKey);
 
     // Convert keys to base64
-    const publicKeyBase64 = btoa(String.fromCharCode(...new Uint8Array(publicKey)));
-    const privateKeyBase64 = btoa(String.fromCharCode(...new Uint8Array(privateKey)));
+    publicKeyBase64 = btoa(String.fromCharCode(...new Uint8Array(publicKey)));
+    privateKeyBase64 = btoa(String.fromCharCode(...new Uint8Array(privateKey)));
 
     // Display the generated keys
     document.getElementById('publicKeyGenerated').value = publicKeyBase64;
