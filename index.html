@@ -14,7 +14,8 @@
         <h2>Generate Key Pair</h2>
         <button onclick="generateKeys()">Generate Keys</button><br>
         <textarea id="publicKeyGenerated" rows="4" cols="50" placeholder="Generated public key will appear here" readonly></textarea><br>
-        <textarea id="privateKeyGenerated" rows="4" cols="50" placeholder="Generated private key will appear here" readonly></textarea>
+        <textarea id="privateKeyGenerated" rows="4" cols="50" placeholder="Generated private key will appear here" readonly></textarea><br>
+        <button onclick="clearKeys()">Clear Keys</button>
     </div>
 
     <hr>
@@ -36,5 +37,6 @@
         <button onclick="decryptMessage()">Decrypt</button><br>
         <textarea id="decryptedMessage" rows="4" cols="50" placeholder="Decrypted message will appear here"></textarea>
     </div>
+
 </body>
 </html>
