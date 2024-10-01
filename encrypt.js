@@ -1,3 +1,29 @@
+async function generateKeys() {
+    // Generate a new RSA key pair
+    const keyPair = await crypto.subtle.generateKey(
+        {
+            name: "RSA-OAEP",
+            modulusLength: 2048,
+            publicExponent: new Uint8Array([1, 0, 1]), // 65537
+            hash: "SHA-256"
+        },
+        true, // Whether the key is extractable
+        ["encrypt", "decrypt"] // Usages
+    );
+
+    // Export the public key
+    const publicKey = await crypto.subtle.exportKey("spki", keyPair.publicKey);
+    const privateKey = await crypto.subtle.exportKey("pkcs8", keyPair.privateKey);
+
+    // Convert keys to base64
+    const publicKeyBase64 = btoa(String.fromCharCode(...new Uint8Array(publicKey)));
+    const privateKeyBase64 = btoa(String.fromCharCode(...new Uint8Array(privateKey)));
+
+    // Display the generated keys
+    document.getElementById('publicKeyGenerated').value = publicKeyBase64;
+    document.getElementById('privateKeyGenerated').value = privateKeyBase64;
+}
+
 async function encryptMessage() {
     const message = document.getElementById('messageToEncrypt').value;
     const publicKey = document.getElementById('publicKey').value;

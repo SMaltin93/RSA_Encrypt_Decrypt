@@ -11,6 +11,15 @@
     <h1>RSA Encryption/Decryption</h1>
 
     <div>
+        <h2>Generate Key Pair</h2>
+        <button onclick="generateKeys()">Generate Keys</button><br>
+        <textarea id="publicKeyGenerated" rows="4" cols="50" placeholder="Generated public key will appear here" readonly></textarea><br>
+        <textarea id="privateKeyGenerated" rows="4" cols="50" placeholder="Generated private key will appear here" readonly></textarea>
+    </div>
+
+    <hr>
+
+    <div>
         <h2>Encrypt Message</h2>
         <textarea id="messageToEncrypt" rows="4" cols="50" placeholder="Enter the message to encrypt"></textarea><br>
         <textarea id="publicKey" rows="4" cols="50" placeholder="Enter the public key"></textarea><br>
@@ -27,6 +36,5 @@
         <button onclick="decryptMessage()">Decrypt</button><br>
         <textarea id="decryptedMessage" rows="4" cols="50" placeholder="Decrypted message will appear here"></textarea>
     </div>
-
 </body>
 </html>
