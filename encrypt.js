@@ -92,3 +92,22 @@ function clearKeys() {
     document.getElementById('publicKeyGenerated').value = '';
     document.getElementById('privateKeyGenerated').value = '';
 }
+
+function copyToClipboard(id) {
+    const element = document.getElementById(id);
+    // Check if the element is a textarea or input
+    if (element) {
+        // Select the text
+        element.select();
+        // Use the modern Clipboard API
+        navigator.clipboard.writeText(element.value)
+            .then(() => {
+                alert("Text copied to clipboard!");
+            })
+            .catch(err => {
+                console.error("Failed to copy: ", err);
+            });
+    } else {
+        console.error("Element not found.");
+    }
+}
