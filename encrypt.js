@@ -93,6 +93,13 @@ function clearKeys() {
     document.getElementById('privateKeyGenerated').value = '';
 }
 
+// clear the clearEncrypteMessage() when the page is clicked
+function clearEncrypteMessage() {
+    document.getElementById('messageToEncrypt').value = '';
+    document.getElementById('publicKey').value = '';
+    document.getElementById('encryptedMessage').value = '';
+}
+
 function copyToClipboard(id) {
     const element = document.getElementById(id);
     // Check if the element is a textarea or input

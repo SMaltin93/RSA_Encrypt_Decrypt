@@ -54,5 +54,6 @@ document.addEventListener('DOMContentLoaded', function() {
 // Function to clear the keys
 function clearDecryptedMessage() {
     document.getElementById('messageToDecrypt').value = '';
+    document.getElementById('privateKey').value = '';
     document.getElementById('decryptedMessage').value = '';
 }
