@@ -53,6 +53,6 @@ document.addEventListener('DOMContentLoaded', function() {
 // clear the keys when the page is clicked
 // Function to clear the keys
 function clearDecryptedMessage() {
-    document.getElementById('messageToEncrypt').value = '';
-    document.getElementById('encryptedMessage').value = '';
+    document.getElementById('messageToDecrypt').value = '';
+    document.getElementById('decryptedMessage').value = '';
 }
