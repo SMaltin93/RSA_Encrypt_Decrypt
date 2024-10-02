@@ -6,8 +6,8 @@ async function generateKeys() {
     const keyPair = await crypto.subtle.generateKey(
         {
             name: "RSA-OAEP",
-            modulusLength: 2048,
-            publicExponent: new Uint8Array([1, 0, 1]), // 65537
+            modulusLength: 4096, // 4096-bit key
+            publicExponent: new Uint8Array([1, 0, 1]), // 24-bit representation of 65537
             hash: "SHA-256"
         },
         true, // Whether the key is extractable
