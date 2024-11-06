@@ -11,7 +11,7 @@ function download(content, filename, contentType) {
 }
 
 function downloadPublicKey() {
-    const publicKey = `-----BEGIN PUBLIC KEY-----\n${document.getElementById('publicKeyGenerated').value}\n-----END PUBLIC KEY-----`;
+    const publicKey = document.getElementById('publicKeyGenerated').value;
     if (!publicKey) {
         alert("Please generate a public key first.");
         return;
@@ -25,7 +25,6 @@ function downloadPrivateKey() {
         alert("Please generate a private key first.");
         return;
     }
-    privateKey = `-----BEGIN PRIVATE KEY-----\n${privateKey}\n-----END PRIVATE KEY-----`;
     download(privateKey, 'private_key.pem', 'application/octet-stream');
 }
 
