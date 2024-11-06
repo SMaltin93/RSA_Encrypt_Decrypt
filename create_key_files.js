@@ -16,6 +16,7 @@ function downloadPublicKey() {
         alert("Please generate a public key first.");
         return;
     }
+    publicKey = `-----BEGIN PUBLIC KEY-----\n${publicKey}\n-----END PUBLIC KEY-----`;
     download(publicKey, 'public_key.pem', 'application/octet-stream');
 }
 
@@ -25,6 +26,7 @@ function downloadPrivateKey() {
         alert("Please generate a private key first.");
         return;
     }
+    privateKey = `-----BEGIN PRIVATE KEY-----\n${privateKey}\n-----END PRIVATE KEY-----`;
     download(privateKey, 'private_key.pem', 'application/octet-stream');
 }
 
