@@ -11,12 +11,11 @@ function download(content, filename, contentType) {
 }
 
 function downloadPublicKey() {
-    const publicKey = document.getElementById('publicKeyGenerated').value;
+    const publicKey = `-----BEGIN PUBLIC KEY-----\n${document.getElementById('publicKeyGenerated').value}\n-----END PUBLIC KEY-----`;
     if (!publicKey) {
         alert("Please generate a public key first.");
         return;
     }
-    publicKey = `-----BEGIN PUBLIC KEY-----\n${publicKey}\n-----END PUBLIC KEY-----`;
     download(publicKey, 'public_key.pem', 'application/octet-stream');
 }
 
